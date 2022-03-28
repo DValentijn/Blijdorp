@@ -1,0 +1,30 @@
+.workinprogress {
+    text-align: center;
+    size: 30px; 
+    margin-right: center;
+    margin-top: 300px;
+}
+
+
+body {
+    color: white;
+    background-image: url('img/background4.png');
+    background-size: cover;
+    font-family: Merriweather;
+    
+    
+}
+
+ul {
+    list-style-type: none;
+}
+
+li a {
+    display: flex;
+    float: center;
+    font-family: Merriweather;
+    text-decoration: none;
+    color: white;
+    font-size: 35px;
+    text-shadow: -1px 1px 20px #000000;
+  }

@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    color: white;
+    background-image: url('img/background3.png');
+    background-size: cover;
+    font-family: Merriweather;
+    
+    
+}
+.logo {
+    display: flex;
+    margin-left: 70px;
+    margin-top: 0px;
+}
+.inlog {
+    margin-left: 600px;
+    text-align: center;
+    font-size: 20px;
+    box-sizing: border-box;
+    margin-top: -300px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: flex;
+    margin-left: 230px;
+    font-family: Merriweather;
+    text-decoration: none;
+    color: white;
+    font-size: 35px;
+    text-shadow: -1px 1px 20px #000000;
+  }
+  
+.navbar {
+    margin-left: 400px;
+}
+
+ul {
+    position: fixed;
+    top: 30px;
+    width: 100%;
+  }
+
+  a:hover {
+    color: #99AAB5;
+  }

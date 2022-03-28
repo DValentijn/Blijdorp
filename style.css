@@ -1,0 +1,27 @@
+            @font-face {
+                font-family: Merriweather;
+                src: url(font/Merriweather-Black.ttf);
+            }
+            
+          
+          
+          
+          body {
+                color: white;
+                background-image: url('img/background.png');
+                background-size: cover;
+                font-family: Merriweather;
+                
+                
+            }
+        .logo {
+            size:50px;
+            margin-left: 37.5%;
+            margin-top: 50px;
+        }
+
+        .form {
+            margin-left: 37.5%;
+            margin-top: 130px;
+        }
+
