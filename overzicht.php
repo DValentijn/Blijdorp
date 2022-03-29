@@ -3,7 +3,7 @@
 include('connect.php');
 
 // Query maken om alle rijen uit de tabel taak op te halen
-$query = $pdo->query("SELECT * FROM `dieren` ORDER BY `dier`.`naam` ASC");
+$query = $pdo->query("SELECT * FROM `dieren` ORDER BY `dieren`.`naam` ASC");
 
 ?>
 <style>
@@ -15,10 +15,11 @@ td, th {
 <!-- Tabel aanmaken in HTML -->
 <table>
     <tr>
+        <th>Id</th>
+        <th>Soort</th>
         <th>Naam</th>
-        <th>Datum</th>
-        <th>Aantal</th>
-        <th>Datum van aanmaak</th>
+        <th>Gedrag</th>
+        <th>Kooi</th>
     </tr>
 
     <!-- While loop die door alle opgehaalde rijen van de tabel taak gaat -->
@@ -26,10 +27,11 @@ td, th {
 
     <!-- Alle data van de opgehaalde rij in table row stoppen -->
     <?php echo '<tr>' ?>
+        <td><?php echo $row['did']; ?></td>
+        <td><?php echo $row['soort']; ?></td>
         <td><?php echo $row['naam']; ?></td>
-        <td><?php echo $row['datum']; ?></td>
-        <td><?php echo $row['people']; ?></td>
-        <td></n><?php echo $row['datumaanmaak']; ?></td>
+        <td></n><?php echo $row['gedrag']; ?></td>
+        <td></n><?php echo $row['kooi']; ?></td>
 
     <?php echo '</tr>' ?>
 

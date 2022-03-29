@@ -1,3 +1,6 @@
+<?php require_once "connect.php"; ?>
+
+
 <html>
     
 <head>
@@ -25,29 +28,35 @@
 </div>
 
 </body>
+
+
 <div class="form">
     <form method="post">
-        <h2>Welk dier?</h2> <INPUT TYPE="text" name='dier'/>
+    <h2 for="soort">Wat voor soort dier is het?</h2>
+            <select name="soort" id="soort">
+            <option value="" selected>--- Kies uw soort ---</option>
+            <option value="zoogdier">Zoogdier</option>
+            <option value="reptiel">Reptiel</option>
+            <option value="vis">Vis</option>
+            <option value="amfibien">Amfibien</option>
+            <option value="vogel">Vogel</option>
+            </select>
 
         <h2>Naam van het dier?</h2> <INPUT TYPE="text" name='naam'>
 
-        <h2>Wat voor gedrag heeft het dier?</h2> <INPUT name='dier' rows="2" cols="30"/>
+        <h2>Wat voor gedrag heeft het dier?</h2> <INPUT name='gedrag' rows="2" cols="30"/>
+
+        <?php 
+            $data = $pdo->query("SELECT `knaam` FROM `kooi`")->fetchAll(PDO::FETCH_OBJ);
+        ?>
 
         <h2 for="kooi">Welk verblijf?</h2>
-            <select name="kooi" id="datum">
-            <?php foreach ($kooi as $kooien): ?>
-                <option value="<?= $kooien; ?>"><?= $kooien; ?></option> 
-                    <?php endforeach; ?>
-            </select>
-
-        <h2 for="soort">Wat voor soort dier is het?</h2>
-            <select name="soort" id="datum">
-            <option value="" selected>--- Kies uw soort ---</option>
-            <option value="zoogdier">zoogdier</option>
-            <option value="zoogdier">reptiel</option>
+        <select name="kooi" id="kooi">
+            <?php foreach($data as $d): ?>
+             <option value="<?= $d->knaam; ?>"><?= $d->knaam; ?></option>
+                  <?php endforeach; ?>
             </select>
            
-
         <h2> <input type="submit", name="btcSave">  </h2>
         </form>
 </div>
@@ -64,12 +73,12 @@ if (isset($_POST["btcSave"])) {
     include('connect.php');
 
 
-    $dier = $_POST["dier"];
-    $naam = $_POST["naam"];
-    $kooi = $_POST["kooi"];
     $soort = $_POST["soort"];
+    $naam = $_POST["naam"];
+    $gedrag = $_POST["gedrag"];
+    $kooi = $_POST["kooi"];
 
-    $query= "INSERT INTO dieren (dier, naam, kooi, soort) VALUES" . "('$dier', '$naam', '$kooi', '$soort')";
+    $query = "INSERT INTO dieren (soort, naam, gedrag, kooi) VALUES" . "('$soort', '$naam', '$gedrag', '$kooi')";
 
     $stm = $pdo->prepare($query);
 
