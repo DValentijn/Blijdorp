@@ -19,9 +19,7 @@ td, th {
   text-align: left;
   padding: 8px;
 }
-table {
-    margin-left: 35%;
-}</style>
+</style>
 <!-- Tabel aanmaken in HTML -->
 <table>
     <tr>
@@ -48,5 +46,6 @@ table {
     <?php } ?>
 </table>
 
+<li><a href="zoek.php">Zoekfunctie</a></li>
 
 

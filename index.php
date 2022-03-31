@@ -69,6 +69,7 @@
 
 if (isset($_POST["btcSave"])) {
     include('connect.php');
+    header("location: overzicht.php");
 
 
     $soort = $_POST["soort"];
