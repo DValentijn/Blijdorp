@@ -1,3 +1,10 @@
+<head>
+    <link rel="stylesheet" href="style5.css" type="text/css">
+    <link rel="shortcut icon" href="img/logo.png" />
+    <title>Dierenpark Blijdorp | Dylano Valentijn</title>
+</head>
+
+
 <?php
 
 include('connect.php');
@@ -11,6 +18,9 @@ td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+}
+table {
+    margin-left: 35%;
 }</style>
 <!-- Tabel aanmaken in HTML -->
 <table>
@@ -37,3 +47,6 @@ td, th {
 
     <?php } ?>
 </table>
+
+
+

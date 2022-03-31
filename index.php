@@ -59,8 +59,6 @@
            
         <h2> <input type="submit", name="btcSave">  </h2>
         </form>
-</div>
-
 
 
 <?php 
@@ -97,3 +95,4 @@ if (isset($_POST["btcSave"])) {
 
 
 </html>
+
