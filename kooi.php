@@ -10,7 +10,7 @@
 include('connect.php');
 
 // Query maken om alle rijen uit de tabel taak op te halen
-$query = $pdo->query("SELECT * FROM `dieren` ORDER BY `dieren`.`naam` ASC");
+$query = $pdo->query("SELECT * FROM `kooi` ORDER BY `kooi`.`knaam` ASC");
 
 ?>
 <style>
@@ -24,10 +24,7 @@ td, th {
 <table>
     <tr>
         <th>Id</th>
-        <th>Soort</th>
         <th>Naam</th>
-        <th>Gedrag</th>
-        <th>Kooi</th>
     </tr>
 
     <!-- While loop die door alle opgehaalde rijen van de tabel taak gaat -->
@@ -35,11 +32,8 @@ td, th {
 
     <!-- Alle data van de opgehaalde rij in table row stoppen -->
     <?php echo '<tr>' ?>
-        <td><?php echo $row['did']; ?></td>
-        <td><?php echo $row['soort']; ?></td>
-        <td><?php echo $row['naam']; ?></td>
-        <td></n><?php echo $row['gedrag']; ?></td>
-        <td></n><?php echo $row['kooi']; ?></td>
+        <td><?php echo $row['kid']; ?></td>
+        <td><?php echo $row['knaam']; ?></td>
 
     <?php echo '</tr>' ?>
 
@@ -61,7 +55,19 @@ require("connect.php")
 
     <div class="form">
     <form method="post">
-    <h2 for="soort">Zoek functie</h2> <INPUT TYPE="text", name="txtsearch">
+    <h2 for="soort">Zoek functie</h2>
+
+    <?php 
+            $data = $pdo->query("SELECT `knaam` FROM `kooi`")->fetchAll(PDO::FETCH_OBJ);
+        ?>
+
+
+    <select name="txtsearch" id="kooi">
+            <?php foreach($data as $d): ?>
+             <option value="<?= $d->knaam; ?>"><?= $d->knaam; ?></option>
+                  <?php endforeach; ?>
+            </select>
+
     <h2> <input type="submit", name="search">  </h2>
 </form>
 

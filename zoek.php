@@ -34,7 +34,7 @@ td, th {
 
     if(isset($_POST['search'])){
         $search = $_POST['txtsearch'];
-        $query = "SELECT * FROM dieren WHERE naam Like '%$search%'";
+        $query = "SELECT * FROM dieren WHERE naam Like '%$search%' OR kooi LIKE '%$search%'";
     }
 
     $stm = $pdo->prepare($query);
