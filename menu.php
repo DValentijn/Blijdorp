@@ -10,8 +10,8 @@
     <div class='navbar'>
     <ul>
   <li><a class="active" href="">Home</a></li>
-  <li><a href="school//blijdorp/plattegrond.php">Plattegrond</a></li>
-  <li><a href="school/blijdorp/contact.php">Contact</a></li>
+  <li><a href="kooi.php">Kooien</a></li>
+  <li><a href="overzicht.php">Dieren</a></li>
 </ul>
     </div>
 </head>

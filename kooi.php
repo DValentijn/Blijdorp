@@ -105,13 +105,13 @@ td, th {
         <th>Kooi</th>
     </tr>
 
-            <?php echo '<tr>'?>
-            <td><?php echo $row->did; ?></td>
-            <td><?php echo $row->soort; ?></td>
-            <td><?php echo $row->naam; ?></td>
-            <td></n><?php echo $row->gedrag; ?></td>
-            <td></n><?php echo $row->kooi; ?></td>
-    
+        <?php echo '<tr>'?>
+        <td><?php echo $row->did; ?></td>
+        <td><?php echo $row->soort; ?></td>
+        <td><?php echo $row->naam; ?></td>
+        <td></n><?php echo $row->gedrag; ?></td>
+        <td></n><?php echo $row->kooi; ?></td>
+
         <?php echo '</tr>' ?>
 
 <?php } 
