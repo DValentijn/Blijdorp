@@ -10,7 +10,8 @@
 include('connect.php');
 
 // Query maken om alle rijen uit de tabel taak op te halen
-$query = $pdo->query("SELECT * FROM `kooi` ORDER BY `kooi`.`knaam` ASC");
+$query = $pdo->query("SELECT *, (SELECT COUNT(`d`.`did`) FROM `dieren` `d` WHERE `d`.`kooi` = `k`.`knaam`) AS `dieren` FROM kooi k ORDER BY `k`.`knaam` ASC;");
+
 
 ?>
 <style>
@@ -25,6 +26,7 @@ td, th {
     <tr>
         <th>Id</th>
         <th>Naam</th>
+        <th>Aantal</th>
     </tr>
 
     <!-- While loop die door alle opgehaalde rijen van de tabel taak gaat -->
@@ -34,6 +36,7 @@ td, th {
     <?php echo '<tr>' ?>
         <td><?php echo $row['kid']; ?></td>
         <td><?php echo $row['knaam']; ?></td>
+        <td><?php echo $row['dieren']; ?></td>
 
     <?php echo '</tr>' ?>
 
